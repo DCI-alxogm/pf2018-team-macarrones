@@ -15,4 +15,4 @@ printf("Prueba datos iniciales %f\t %f\t %lf\t %lf\t %lf\t %lf\t %lf\t %lf\t %f\
 fclose(datos);
 
 return 0;
-}datos2;
+}
