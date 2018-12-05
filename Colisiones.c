@@ -8,17 +8,21 @@ FILE *datos;
 FILE *datos2;
 int i,r;
 double np=20;                                                
-float F,h,mp,t,m,R;
-float xi,yi,zi,vxi,vyi,vzi,Fx,Fy,Fz;
+float f,h,mp,t,m,R;
+float Fx,Fy,Fz;
+double xi,yi,zi,vxi,vyi,vzi;
 float pi=3.1416;
 float G=4*pow(pi,2);
 
 datos=fopen("datos.txt","r");
-scanf("%f",&mp,&t,&xi,&yi,&zi,&vxi,&vyi,&vzi,&h);
+fscanf(datos,"%f\t %f\t %lf\t %lf\t %lf\t %lf\t %lf\t %lf\t %f\t ",&mp,&t,&xi,&yi,&zi,&vxi,&vyi,&vzi,&h);
+printf("Prueba datos iniciales %f\t %f\t %lf\t %lf\t %lf\t %lf\t %lf\t %lf\t %f\t  \n",mp,t,xi,yi,zi,vxi,vyi,vzi,h);
 fclose(datos);
+
 datos2=fopen("datos2.txt","w");
 
-printf("Introduce un radio entero deseado: \n");
+
+printf("Introduce un radio entero deseado de la esfera: \n");
 scanf("%i", &r);
 
 //Calcular la masa de cada galaxia
@@ -30,27 +34,27 @@ for(i=0; i<np; i++);
 }	
 
 
-//Calcular la fuerza
+//Calcular la fuerza gravitacional
 
-F=-(G(m*m)/pow(r,3));
+f=-(G(m*m)/pow(r,3));
 
 
 
 //Ciclo para calcular la distancia de la galaxia
-for(i=0; i<np; i++);
+/*for(i=0; i<np; i++);
 {
  	
 	R=pow(-G*(m*m)/F,1/3);
 	
 }
-
+*/
 
 //Ciclo para poder calcular la nueva posicion y la nueva velocidad
 for (i=0; i<np; i++);
 {
-	xi(t+h)=xi*(t)+h*vxi*(t)+1/2*Fx*pow(h,2);
-	yi(t+h)=yi*(t)+h*vyi*(t)+1/2*Fy*pow(h,2);
-	zi(t+h)=zi*(t)+h*vzi*(t)+1/2*Fz*pow(h,2);
+	xi(t+h)=xi*(t)+h*vxi*(t)+(1/2)*Fx*pow(h,2);
+	yi(t+h)=yi*(t)+h*vyi*(t)+(1/2)*Fy*pow(h,2);
+	zi(t+h)=zi*(t)+h*vzi*(t)+(1/2)*Fz*pow(h,2);
 }
 for(i=0; i<np; i++);
 {
@@ -59,7 +63,7 @@ for(i=0; i<np; i++);
 	vzi(t+h)=vzi*(t)+1/2(Fz*(t)+Fz(t+h))*h;
 }
 
-fprintf(datos2,"%f,%f,%f,%f,%f,%f", xi, yi, zi, vxi, vyi, vzi); //Se impren los nuevos datos en un archivo separado
+fprintf(datos2,"%f,%f,%f,%f,%f,%f", xi, yi, zi, vxi, vyi, vzi); //Se imprimen los nuevos datos en un archivo separado
 fclose(datos2);
 
 return 0;
