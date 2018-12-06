@@ -14,7 +14,7 @@ FILE *datos;
 FILE *datos2;
 
 datos=fopen("constantes","r");
-fscanf(constantes,"%f\n, %f\n, %f\n",&mp,&t,&h);
+fscanf(constantes,"%f\n, %f\n, %f\n",&h,&mp,&t);
 printf("Prueba datos iniciales %f\t %f\t %lf\t %lf\t %lf\t %lf\t %lf\t %lf\t %f\t  \n",mp,t,xi,yi,zi,vxi,vyi,vzi,h);
 fclose(datos);
 
