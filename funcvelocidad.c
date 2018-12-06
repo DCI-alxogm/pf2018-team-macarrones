@@ -1,4 +1,4 @@
-
+#include<stdio.h>
 #include<math.h>
 
 int main()
@@ -21,7 +21,7 @@ printf("\n%f %f\n", h, t);
 
 velocidadesN=fopen("velocidadesN.txt","w");
 
-for(i=0; i<np; i++)
+for(i=0; i<1/*np*/; i++)
 
 {
 	vxf=(vxi[i]*(t)+.5*(fxi[i]*(t)+fxi[i]*(t+h))*h)/(t+h);
