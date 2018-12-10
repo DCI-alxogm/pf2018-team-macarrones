@@ -2,6 +2,7 @@
 #include<math.h>
 #include<stdlib.h>
 #include<time.h>
+<<<<<<< HEAD
 //codigo para poder sacar coordenadas en las dimensiones x,y,z aleatoriamente 
 int main()
 {
@@ -18,6 +19,18 @@ int main()
 		fprintf(datos, "%d,%d,%d\n", x,y,z);	
 	}
 	fclose(datos);
+=======
+
+int main()
+{
+int num;
+FILE* datos;
+datos=fopen("cooresferas.txt", "w");
+srand(time(NULL));
+num=rand()%51;
+fprintf(datos, "%d\n", num);
+fclose(datos);
+>>>>>>> 988835e5e375ebaa1e8bb309dc4ed11cc48439c6
 return 0;
 
 }
